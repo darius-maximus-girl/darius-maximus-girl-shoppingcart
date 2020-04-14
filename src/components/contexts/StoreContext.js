@@ -1,21 +1,17 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
+import { storeReducer } from '../reducers/StoreReducer';
 
 export const StoreContext = createContext();
 
 const StoreContextProvider = (props) => {
 
-    const [userProducts, setUserProducts] = useState([]);
+    const [userProducts, dispatch] = useReducer(storeReducer, []);
 
-    const addUserProduct = (product) => {
-        setUserProducts([...userProducts, product])
-    }
-
-    const removeUserProduct = (id) => {
-        setUserProducts(userProducts.filter(item => item.id !== id))
-    }
-
+    useEffect(() => {
+        console.log('USER PRODUCTS', userProducts)
+    })
     return (
-        <StoreContext.Provider value={{ userProducts, addUserProduct, removeUserProduct }}>
+        <StoreContext.Provider value={{ userProducts, dispatch }}>
             {props.children}
         </StoreContext.Provider>
     );
