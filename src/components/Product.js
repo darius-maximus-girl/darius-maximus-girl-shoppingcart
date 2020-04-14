@@ -1,18 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { StoreContext } from '../components/contexts/StoreContext';
 
 function Product({ phone }) {
 
-    const { dispatch } = useContext(StoreContext);
-
-    //Handle onClick => 1) add item to a cart 2) toggle button (on the basis of id check the userProducts in the store, e.g. on the basis of indexOf or include? if the userProducts inclide a product with the id which is equal to the phone.id then the button says smth like 'Already in your cart' else it says 'Add to cart' :)  
+    const { dispatch, userProducts } = useContext(StoreContext);
+    const isInAcart = userProducts.some(item => item.id === phone.id);
 
     return (
-        <div>
-            <h3>{phone.model}</h3>
-            <p>{phone.price}</p>
-            <img src={phone.img}></img>
-            <button onClick={() => dispatch({
+        <div className="product">
+            <h3 className="product-model">{phone.model}</h3>
+            <p className="product-price">{phone.price}</p>
+            <img className="product-img" src={phone.img} alt="mobile phone"></img>
+            <button className="regular-btn" onClick={() => dispatch({
                 type: 'ADD_ITEM', item: {
                     id: phone.id,
                     model: phone.model,
@@ -20,7 +19,7 @@ function Product({ phone }) {
                     img: phone.img,
                     inStock: phone.inStock
                 }
-            })}>Add to cart</button>
+            })}>{isInAcart ? 'Already in a cart' : 'Add to cart'}</button>
         </div>
     );
 }
