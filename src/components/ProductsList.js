@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import Product from './Product';
 import { StoreContext } from './contexts/StoreContext';
 
-
 function ProductsList(props) {
 
     const { store } = useContext(StoreContext);
