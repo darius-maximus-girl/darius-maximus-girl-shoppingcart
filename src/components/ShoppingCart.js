@@ -4,11 +4,12 @@ import { StoreContext } from './contexts/StoreContext';
 
 function ShoppingCart(props) {
 
-    const { userProducts } = useContext(StoreContext);
+    const { store } = useContext(StoreContext);
+    const items = store.productsInCart;
 
-    return userProducts.length ? (
+    return items.length ? (
         <div>
-            <h3>Hello from Shopping Cart! Items in your cart: {userProducts.length} </h3>
+            <h3>Hello from Shopping Cart! Items in your cart: {items.length} </h3>
         </div>
     ) : (
             <div>
