@@ -1,12 +1,12 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { StoreContext } from '../components/contexts/StoreContext';
 import { Link } from 'react-router-dom';
 
 function Product({ phone }) {
 
-    const { dispatch } = useContext(StoreContext);
-    //TASK FOR TODAY! check if item is in cart by iteraing throught cartProducts on the basis of id, couse in this case the state is reset when the component is unmounted... 
-    const [isInCart, setIsInCart] = useState(phone.inCart);
+    const { dispatch, store } = useContext(StoreContext);
+    const isInCart = store.productsInCart.some(item => item.id === phone.id);
+    console.log('is in the cart?', isInCart);
 
     const setProductDetails = () => {
         dispatch({
@@ -33,7 +33,6 @@ function Product({ phone }) {
                     inStock: phone.inStock,
                 }
             });
-            setIsInCart(true);
         }
     }
 
