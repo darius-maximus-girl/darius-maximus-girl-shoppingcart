@@ -19,6 +19,7 @@ function ProductDetails(props) {
                     img: phone.img,
                     price: phone.price,
                     id: phone.id,
+                    inCart: phone.inCart,
                     inStock: phone.inStock,
                 }
             });
