@@ -6,7 +6,7 @@ function ProductInCart(props) {
 
     const { dispatch, store } = useContext(StoreContext);
     const { item } = props;
-    let [price, setPrice] = useState(item.price);
+    let [price, setPrice] = useState(item.price * item.inCart);
 
     useEffect(() => {
         console.log(item.inCart)
