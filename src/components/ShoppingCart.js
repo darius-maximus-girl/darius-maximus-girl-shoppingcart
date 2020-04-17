@@ -6,19 +6,19 @@ import ProductInCart from './ProductInCart';
 function ShoppingCart(props) {
 
     const { store } = useContext(StoreContext);
-    const items = store.productsInCart;
+    // const items = store.productsInCart;
 
-    return items.length ? (
+    return store.productsInCart.length ? (
         <div className="cart-container">
-            <h3 className="cart-container__msg">Hello from Shopping Cart! Items in your cart: {items.length} </h3>
+            <h3 className="cart-container__msg">Hello from Shopping Cart! Items in your cart: {store.productsInCart.length} </h3>
             <ul className="cart-container__items">
-                {items.map(item => {
+                {store.productsInCart.map(item => {
                     return <ProductInCart key={item.id} item={item} />
                 })}
             </ul>
         </div>
     ) : (
-            <div>
+            <div className="cart-container">
                 Your cart is empty. Go to <Link to="/">products</Link>.
             </div>
         )

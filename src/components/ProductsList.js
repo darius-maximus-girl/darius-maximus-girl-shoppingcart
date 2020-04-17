@@ -8,10 +8,16 @@ function ProductsList(props) {
     const phones = store.products;
 
     return (
-        <div className="products-container">
-            {phones.map(phone => {
-                return <Product key={phone.id} phone={phone} />
-            })}
+        <div>
+            <div className="products-container">
+                {phones.map(phone => {
+                    return <Product key={phone.id} phone={phone} />
+                })}
+            </div>
+            {/*COUNTS THE PRICE OF ALL PRODUCTS IN A CART*/}
+            <div className='summary'>
+
+            </div>
         </div>
     );
 }

@@ -1,12 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { StoreContext } from '../components/contexts/StoreContext';
 import { Link } from 'react-router-dom';
+import SoldOut from '../assets/images/soldout.png';
 
 function Product({ phone }) {
 
+    const [soldOut, setSoldOut] = useState(false);
     const { dispatch, store } = useContext(StoreContext);
     const isInCart = store.productsInCart.some(item => item.id === phone.id);
-    console.log('is in the cart?', isInCart);
+
+    useEffect(() => {
+        store.inStock === 0 ? setSoldOut(true) : setSoldOut(false)
+    }, []);
 
     const setProductDetails = () => {
         dispatch({
@@ -30,8 +35,9 @@ function Product({ phone }) {
                     img: phone.img,
                     price: phone.price,
                     id: phone.id,
+                    inCart: phone.inCart,
                     inStock: phone.inStock,
-                }
+                }, id: phone.id
             });
         }
     }
@@ -43,8 +49,10 @@ function Product({ phone }) {
                 <h3 className="product-model">{phone.model}</h3>
                 <p className="product-price">{phone.price}</p>
                 <img className="product-img" src={phone.img} alt="mobile phone"></img>
+                <p>Only {phone.inStock} items left.</p>
             </Link>
             <button className="regular-btn" onClick={() => handleOnclick()}>{isInCart ? 'Already in a cart' : 'Add to cart'}</button>
+            {soldOut ? <img src={SoldOut} alt="" className="product-soldout" /> : ''}
         </ div >
     );
 }
