@@ -6,7 +6,6 @@ import ProductInCart from './ProductInCart';
 function ShoppingCart(props) {
 
     const { store } = useContext(StoreContext);
-    // const items = store.productsInCart;
 
     return store.productsInCart.length ? (
         <div className="cart-container">
@@ -15,6 +14,9 @@ function ShoppingCart(props) {
                 {store.productsInCart.map(item => {
                     return <ProductInCart key={item.id} item={item} />
                 })}
+                <div className="cart-container__items-summary">
+                    <p className="text">In total <span>{store.totalPrice.toFixed(2)}$</span></p>
+                </div>
             </ul>
             {/* TASK FOR TODAY: PAYMENT DETAILS AND ORDER FORM*/}
         </div>

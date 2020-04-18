@@ -33,7 +33,7 @@ function Product({ phone }) {
                     id: phone.id,
                     inCart: phone.inCart,
                     inStock: phone.inStock,
-                }, id: phone.id
+                }, id: phone.id, price: phone.price
             });
         }
     }

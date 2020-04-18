@@ -22,7 +22,7 @@ function ProductDetails(props) {
                     id: phone.id,
                     inCart: phone.inCart,
                     inStock: phone.inStock,
-                }
+                }, price: phone.price
             });
             dispatch({ type: 'DECREASE_STOCK_FROM_DETAILS', id: phone.id })
             setShowPopup(true);

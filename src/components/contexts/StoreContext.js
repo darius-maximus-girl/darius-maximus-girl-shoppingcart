@@ -7,13 +7,14 @@ export const StoreContext = createContext();
 const StoreContextProvider = (props) => {
 
     const [store, dispatch] = useReducer(storeReducer, {
-        products: products, 
-        productDetails: productDetails, 
-        productsInCart: [] 
+        products: products,
+        productDetails: productDetails,
+        productsInCart: [],
+        totalPrice: 0
     });
 
     useEffect(() => {
-    console.log(store)
+        console.log(store)
     }, [store])
 
     return (

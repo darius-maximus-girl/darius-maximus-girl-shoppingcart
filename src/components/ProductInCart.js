@@ -16,7 +16,7 @@ function ProductInCart(props) {
         if (item.inCart < item.inStock) {
             let newPrice = price + item.price;
             setPrice(newPrice);
-            dispatch({ type: 'DECREASE_INSTOCK', id })
+            dispatch({ type: 'DECREASE_INSTOCK', id, price: item.price })
         }
     }
 
@@ -24,10 +24,10 @@ function ProductInCart(props) {
         if (item.inCart > 1) {
             let newPrice = price - item.price;
             setPrice(newPrice);
-            dispatch({ type: 'INCREASE_INSTOCK', id });
+            dispatch({ type: 'INCREASE_INSTOCK', id, price: item.price });
         } else if (item.inCart === 1) {
-            dispatch({ type: 'REMOVE_ITEM', id });
-            dispatch({ type: 'INCREASE_INSTOCK', id });
+            dispatch({ type: 'REMOVE_ITEM', id, price: item.price });
+            dispatch({ type: 'INCREASE_INSTOCK', id, price: item.price });
         }
     }
 
@@ -40,7 +40,7 @@ function ProductInCart(props) {
                 <button onClick={() => removeItem(item.id)}>-</button>
             </div>
             <p className="item-number">{item.inCart}</p>
-            <p className="item-price">{price}$</p>
+            <p className="item-price">{price.toFixed(2)}$</p>
         </li>
     );
 }

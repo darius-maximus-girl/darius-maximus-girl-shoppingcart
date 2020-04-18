@@ -13,10 +13,13 @@ export const storeReducer = (state, action) => {
                     } else {
                         return item
                     }
-                })
+                }),
+                totalPrice: state.totalPrice + action.price
             }
         case 'REMOVE_ITEM':
-            return { ...state, productsInCart: state.productsInCart.filter(item => item.id !== action.id) }
+            return {
+                ...state, productsInCart: state.productsInCart.filter(item => item.id !== action.id),
+            }
         case 'SET_PRODUCT_DETAILS':
             return {
                 ...state, productDetails: action.details,
@@ -43,7 +46,8 @@ export const storeReducer = (state, action) => {
                     } else {
                         return item
                     }
-                })
+                }),
+                totalPrice: state.totalPrice - action.price
             }
         case 'DECREASE_INSTOCK':
             return {
@@ -67,7 +71,8 @@ export const storeReducer = (state, action) => {
                     } else {
                         return item
                     }
-                })
+                }),
+                totalPrice: state.totalPrice + action.price
             }
         case 'DECREASE_STOCK_FROM_DETAILS':
             return {
