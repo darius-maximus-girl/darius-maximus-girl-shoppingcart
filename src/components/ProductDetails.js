@@ -9,7 +9,8 @@ function ProductDetails(props) {
     const phone = store.productDetails;
     const isInCart = store.productsInCart.some(item => item.id === phone.id);
     const [showPopup, setShowPopup] = useState(false);
-    //After adding to a cart there should be a popup asking if I want to continue shopping (Link to '/') or go back to a cart (/shopping-cart)? 
+
+    //TASK FOR TODAY: DECREASE NUMBER IN STOCK ON CLICK
 
     const handleOnClick = () => {
         if (!isInCart) {
@@ -23,7 +24,8 @@ function ProductDetails(props) {
                     inStock: phone.inStock,
                 }
             });
-            setShowPopup(true)
+            dispatch({ type: 'DECREASE_STOCK_FROM_DETAILS', id: phone.id })
+            setShowPopup(true);
         }
     }
 

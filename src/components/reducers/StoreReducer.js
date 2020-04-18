@@ -69,6 +69,20 @@ export const storeReducer = (state, action) => {
                     }
                 })
             }
+        case 'DECREASE_STOCK_FROM_DETAILS':
+            return {
+                ...state,
+                products: state.products.map(item => {
+                    if (item.id === action.id) {
+                        return {
+                            ...item,
+                            inStock: item.inStock - 1
+                        }
+                    } else {
+                        return item
+                    }
+                })
+            }
         default:
             return state;
     }

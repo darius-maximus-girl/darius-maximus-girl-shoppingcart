@@ -16,6 +16,7 @@ function ShoppingCart(props) {
                     return <ProductInCart key={item.id} item={item} />
                 })}
             </ul>
+            {/* TASK FOR TODAY: PAYMENT DETAILS AND ORDER FORM*/}
         </div>
     ) : (
             <div className="cart-container">
