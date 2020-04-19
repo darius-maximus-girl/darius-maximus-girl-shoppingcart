@@ -1,0 +1,12 @@
+.delivery-form {
+    width: 50%;
+    margin: 0 auto;
+    background: rgb(164, 164, 167);
+    padding: 10px;
+
+    &__options {
+        width: 50%;
+        text-align: left;
+        list-style-type: none;
+    }
+}

@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useEffect } from 'react';
 import { storeReducer } from '../reducers/StoreReducer';
-import { products, productDetails } from '../productsDB';
+import { products, productDetails, deliveryOptions } from '../productsDB';
 
 export const StoreContext = createContext();
 
@@ -10,12 +10,9 @@ const StoreContextProvider = (props) => {
         products: products,
         productDetails: productDetails,
         productsInCart: [],
-        totalPrice: 0
+        totalPrice: 0,
+        deliveryOptions: deliveryOptions,
     });
-
-    useEffect(() => {
-        console.log(store)
-    }, [store])
 
     return (
         <StoreContext.Provider value={{ store, dispatch }}>

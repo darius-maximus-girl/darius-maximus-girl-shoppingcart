@@ -88,6 +88,24 @@ export const storeReducer = (state, action) => {
                     }
                 })
             }
+        case 'CHOOSE_DELIVERY':
+            return {
+                ...state,
+                totalPrice: (state.totalPrice - action.currentDeliveryPrice) + action.price,
+                deliveryOptions: state.deliveryOptions.map(option => {
+                    if (option.id === action.id) {
+                        return {
+                            ...option,
+                            checked: true
+                        }
+                    } else {
+                        return {
+                            ...option,
+                            checked: false
+                        }
+                    }
+                })
+            }
         default:
             return state;
     }

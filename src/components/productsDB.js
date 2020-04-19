@@ -37,3 +37,25 @@ export const productDetails = {
     inStock: 0,
     description: ''
 }
+
+export const deliveryOptions = [
+    {
+        id: 1,
+        form: 'courier DPD',
+        price: 10,
+        checked: false
+
+    },
+    {
+        id: 2,
+        form: 'traditional post office',
+        price: 3,
+        checked: false
+    },
+    {
+        id: 3,
+        form: 'personal pickup',
+        price: 0,
+        checked: false
+    }
+]
