@@ -31,14 +31,19 @@ function ProductInCart(props) {
         }
     }
 
+    const removeAllItems = (id) => {
+        dispatch({ type: 'RETURN_ALL', id, number: item.inCart, price: price })
+    }
+
     return (
         <li className="item">
             <p className="item-model">{item.model}</p>
             <img className="item-img" src={item.img} alt="cart-img"></img>
             <div className="item-btns">
                 <button onClick={() => addItem(item.id)}>+</button>
-                <button onClick={() => removeItem(item.id)}>-</button>
+                <button onClick={() => removeAllItems(item.id)}>-</button>
             </div>
+            <button onClick={() => removeAllItems(item.id)}>Remove item</button>
             <p className="item-number">{item.inCart}</p>
             <p className="item-price">{price.toFixed(2)}$</p>
         </li>

@@ -106,6 +106,23 @@ export const storeReducer = (state, action) => {
                     }
                 })
             }
+        case 'RETURN_ALL':
+            return {
+                ...state,
+                totalPrice: state.totalPrice - action.price,
+                productsInCart: state.productsInCart.filter(item => item.id !== action.id),
+                products: state.products.map(item => {
+                    if (item.id === action.id) {
+                        return {
+                            ...item,
+                            inStock: item.inStock + action.number,
+                        }
+                    } else {
+                        return item
+                    }
+
+                })
+            }
         default:
             return state;
     }
