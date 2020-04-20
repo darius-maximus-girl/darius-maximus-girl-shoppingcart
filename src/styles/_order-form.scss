@@ -1,0 +1,32 @@
+.form-container {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 70px;
+
+    @media #{$mid} {
+        width: 80%;
+    }
+
+    .form {
+        padding: 5%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+        background: rgb(214, 214, 214);
+
+        @media #{$mid} {
+            width: 60%;
+        }
+
+        &__input {
+            padding: 10px;
+            margin: 10px;
+
+            &::placeholder {
+                text-transform: capitalize;
+            }
+        }
+    }
+}

@@ -123,6 +123,18 @@ export const storeReducer = (state, action) => {
 
                 })
             }
+        case 'CLEAR_THE_CART':
+            return ({
+                ...state,
+                productsInCart: [],
+                totalPrice: 0,
+                deliveryOptions: state.deliveryOptions.map(option => {
+                    return ({
+                        ...option,
+                        checked: false
+                    })
+                })
+            })
         default:
             return state;
     }
