@@ -26,6 +26,33 @@ export const products = [
         inStock: 24,
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias eligendi, dolorem fugit doloremque et deleniti minus obcaecati iusto accusantium voluptatibus veniam? Dolor quae quidem explicabo veritatis, accusamus illum sapiente voluptates aliquam veniam est facilis beatae, saepe eum molestiae repellat doloribus et ullam illo error excepturi! Sequi sapiente unde fugit quidem!'
     },
+    {
+        model: 'huawei-Y7',
+        img: '/images/huawei-Y7.jpg',
+        price: 180.50,
+        id: 4,
+        inCart: 1,
+        inStock: 4,
+        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias eligendi, dolorem fugit doloremque et deleniti minus obcaecati iusto accusantium voluptatibus veniam? Dolor quae quidem explicabo veritatis, accusamus illum sapiente voluptates aliquam veniam est facilis beatae, saepe eum molestiae repellat doloribus et ullam illo error excepturi! Sequi sapiente unde fugit quidem!'
+    },
+    {
+        model: 'huawei-p30',
+        img: '/images/huawei-p30.jpg',
+        price: 220.30,
+        id: 5,
+        inCart: 1,
+        inStock: 0,
+        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias eligendi, dolorem fugit doloremque et deleniti minus obcaecati iusto accusantium voluptatibus veniam? Dolor quae quidem explicabo veritatis, accusamus illum sapiente voluptates aliquam veniam est facilis beatae, saepe eum molestiae repellat doloribus et ullam illo error excepturi! Sequi sapiente unde fugit quidem!'
+    },
+    {
+        model: 'sony-xperia-z5',
+        img: '/images/sony-xperia-z5.jpg',
+        price: 280.99,
+        id: 6,
+        inCart: 1,
+        inStock: 14,
+        description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias eligendi, dolorem fugit doloremque et deleniti minus obcaecati iusto accusantium voluptatibus veniam? Dolor quae quidem explicabo veritatis, accusamus illum sapiente voluptates aliquam veniam est facilis beatae, saepe eum molestiae repellat doloribus et ullam illo error excepturi! Sequi sapiente unde fugit quidem!'
+    },
 ]
 
 export const productDetails = {

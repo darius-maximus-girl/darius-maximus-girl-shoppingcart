@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Product({ phone }) {
 
-    const [soldOut, setSoldOut] = useState(phone.inStock === 0 ? true : false);
+    const soldOut = phone.inStock === 0 ? true : false;
     const { dispatch, store } = useContext(StoreContext);
     const isInCart = store.productsInCart.some(item => item.id === phone.id);
 
@@ -45,9 +45,16 @@ function Product({ phone }) {
                 </div>
                 <h3 className="product-model">{phone.model}</h3>
                 <p className="product-price">{phone.price}$</p>
-                <p className="product-left">Only <span>{phone.inStock}</span> items left.</p>
+                {!soldOut ? (
+                    <p className="product-left">Only <span>{phone.inStock}</span> items left.</p>
+                ) : (
+                        <p>No items left.</p>
+                    )
+                }
             </Link>
-            <button className={!isInCart ? "regular-btn" : "regular-btn btn-reverse"} onClick={() => handleOnclick()}>{isInCart ? "In a cart" : "Add to a cart"}</button>
+            {!soldOut ? <button className={!isInCart && !soldOut ? "regular-btn" : "regular-btn btn-reverse"} onClick={() => handleOnclick()}>{isInCart ? "In a cart" : "Add to a cart"}</button> : ''
+            }
+
             {soldOut ? <div className="product-soldout">SOLD OUT</div> : ''}
         </ div >
     );

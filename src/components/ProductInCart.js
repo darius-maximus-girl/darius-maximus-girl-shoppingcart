@@ -41,7 +41,7 @@ function ProductInCart(props) {
             <img className="item-img" src={item.img} alt="cart-img"></img>
             <div className="item-btns">
                 <button onClick={() => addItem(item.id)}>+</button>
-                <button onClick={() => removeAllItems(item.id)}>-</button>
+                <button onClick={() => removeItem(item.id)}>-</button>
             </div>
             <button onClick={() => removeAllItems(item.id)}>Remove item</button>
             <p className="item-number">{item.inCart}</p>
