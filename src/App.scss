@@ -1,6 +1,10 @@
-@import './styles/export';
+@import "./styles/export";
+
+body {
+  background-color: $light;
+}
 
 .App {
   text-align: center;
+  font-family: $secondary-font;
 }
-

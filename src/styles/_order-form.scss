@@ -26,6 +26,8 @@
 
             &::placeholder {
                 text-transform: capitalize;
+                font-family: $secondary-font;
+                font-weight: 400;
             }
         }
     }

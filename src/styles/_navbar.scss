@@ -1,0 +1,60 @@
+.navbar {
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    z-index: 2;
+    background: $sky-transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .logo {
+            width: 40px;
+            height: 40px;
+        }
+
+        .txt {
+            margin-left: 3px;
+            font-weight: 900;
+            font-size: 22px;
+            letter-spacing: 5px;
+            color: $sea;
+        }
+    }
+
+    &__links {
+        display: flex;
+
+        a {
+            color: $grey;
+            background: linear-gradient(to bottom, $line 0%, $line 100%);
+            background-position: 0 100%;
+            background-repeat: repeat-x;
+            background-size: 4px 4px;
+            color: $grey;
+            text-decoration: none;
+            transition: all 0.2s;
+
+            &:active {
+                color: $sea;
+            }
+
+            &:hover {
+                background-size: 4px 50px;
+                color: $white;
+            }
+        }
+
+        .link {
+            margin: 10px;
+        }
+    }
+}

@@ -1,8 +1,7 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Encode Sans Expanded', 'Spartan', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(224, 231, 231);
@@ -17,4 +16,9 @@ code {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
 }

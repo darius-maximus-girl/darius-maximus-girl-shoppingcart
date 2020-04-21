@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { StoreContext } from '../components/contexts/StoreContext';
 import { Link } from 'react-router-dom';
-import SoldOut from '../assets/images/soldout.png';
 
 function Product({ phone }) {
 
@@ -41,12 +40,12 @@ function Product({ phone }) {
     return (
         <div className="product" onClick={() => setProductDetails()}>
             <Link to="/product-details">
+                <img className="product-img" src={phone.img} alt="mobile phone"></img>
                 <h3 className="product-model">{phone.model}</h3>
                 <p className="product-price">{phone.price}$</p>
-                <img className="product-img" src={phone.img} alt="mobile phone"></img>
-                <p>Only {phone.inStock} items left.</p>
+                <p className="product-left">Only <span>{phone.inStock}</span> items left.</p>
             </Link>
-            <button className="regular-btn" onClick={() => handleOnclick()}>{isInCart ? 'Already in a cart' : 'Add to cart'}</button>
+            <button className="regular-btn" onClick={() => handleOnclick()}>{isInCart ? "In a cart" : "Add to a cart"}</button>
             {soldOut ? <div className="product-soldout">SOLD OUT</div> : ''}
         </ div >
     );

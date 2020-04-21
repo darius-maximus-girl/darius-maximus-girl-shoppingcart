@@ -1,6 +1,8 @@
 .regular-btn {
-    background: $add-btns;
+    background: $border;
     padding: 10px;
     border: none;
     cursor: pointer;
+    font-family: $secondary-font;
+    font-weight: 300;
 }

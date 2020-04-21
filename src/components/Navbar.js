@@ -1,15 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Logo from '../assets/images/logo.png'
 
 function Navbar(props) {
     return (
-        <div>
+        <div className="navbar">
             <Link to="/">
-                <h3>products</h3>
+                <div className="navbar__logo">
+                    <img className="logo" src={Logo} alt="logo"></img>
+                    <p className="txt">phone</p>
+                </div>
             </Link>
-            <Link to="/shopping-cart">
-                <h3>my cart</h3>
-            </Link>
+            <div className="navbar__links">
+                <Link to="/">
+                    <h3 className="link">products</h3>
+                </Link>
+                <Link to="/shopping-cart">
+                    <h3 className="link">my cart</h3>
+                </Link>
+
+            </div>
         </div>
     );
 }
