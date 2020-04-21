@@ -45,7 +45,7 @@ function Product({ phone }) {
                 <p className="product-price">{phone.price}$</p>
                 <p className="product-left">Only <span>{phone.inStock}</span> items left.</p>
             </Link>
-            <button className="regular-btn" onClick={() => handleOnclick()}>{isInCart ? "In a cart" : "Add to a cart"}</button>
+            <button className={!isInCart ? "regular-btn" : "regular-btn btn-reverse"} onClick={() => handleOnclick()}>{isInCart ? "In a cart" : "Add to a cart"}</button>
             {soldOut ? <div className="product-soldout">SOLD OUT</div> : ''}
         </ div >
     );

@@ -31,13 +31,17 @@ function ProductDetails(props) {
 
     return (
         <div className="details-container">
-            <h3>Hello from Product Details</h3>
-            <Link to="/"><p>Go back</p></Link>
+            <Link to="/"><p className="regular-btn go-back">Go back</p></Link>
             <div className="details">
-                <p className="details-model">{phone.model}</p>
+
                 <img className="details-img" src={phone.img} alt="mobile phone"></img>
-                <p className="details-description">{phone.description}</p>
-                <button className="regular-btn" onClick={() => handleOnClick()}>{isInCart ? 'In a cart' : 'Add to a cart'}</button>
+                <div className="details__desc">
+                    <p className="details__desc-model">{phone.model}</p>
+                    <p className="details__desc-description">{phone.description}</p>
+                    <p className="details__desc-price">{phone.price}$</p>
+                    <button className={!isInCart ? "regular-btn" : "regular-btn btn-reverse"} onClick={() => handleOnClick()}>{isInCart ? 'In a cart' : 'Add to a cart'}</button>
+                </div>
+
             </div>
             {showPopup ? <Popup /> : ''}
         </div>
