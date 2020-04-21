@@ -10,8 +10,6 @@ function ProductDetails(props) {
     const isInCart = store.productsInCart.some(item => item.id === phone.id);
     const [showPopup, setShowPopup] = useState(false);
 
-    //TASK FOR TODAY: DECREASE NUMBER IN STOCK ON CLICK
-
     const handleOnClick = () => {
         if (!isInCart) {
             dispatch({
@@ -29,11 +27,14 @@ function ProductDetails(props) {
         }
     }
 
+    const closePopup = () => {
+        setShowPopup(false)
+    }
+
     return (
         <div className="details-container">
             <Link to="/"><p className="regular-btn go-back">Go back</p></Link>
             <div className="details">
-
                 <img className="details-img" src={phone.img} alt="mobile phone"></img>
                 <div className="details__desc">
                     <p className="details__desc-model">{phone.model}</p>
@@ -43,7 +44,7 @@ function ProductDetails(props) {
                 </div>
 
             </div>
-            {showPopup ? <Popup /> : ''}
+            {showPopup ? <Popup closePopup={closePopup} /> : ''}
         </div>
     );
 }

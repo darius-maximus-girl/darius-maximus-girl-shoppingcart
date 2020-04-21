@@ -1,7 +1,7 @@
 export const products = [
     {
-        model: 'samsung-galaxy-s6',
-        img: '/images/samsung-galaxy-s6.png',
+        model: 'samsung-galaxy-s10',
+        img: '/images/samsung-galaxy-s10.jpg',
         price: 300.50,
         id: 1,
         inCart: 1,
@@ -9,8 +9,8 @@ export const products = [
         description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias eligendi, dolorem fugit doloremque et deleniti minus obcaecati iusto accusantium voluptatibus veniam? Dolor quae quidem explicabo veritatis, accusamus illum sapiente voluptates aliquam veniam est facilis beatae, saepe eum molestiae repellat doloribus et ullam illo error excepturi! Sequi sapiente unde fugit quidem!'
     },
     {
-        model: 'samsung-galaxy-j7',
-        img: '/images/samsung-galaxy-j7-pro.jpg',
+        model: 'samsung-galaxy-s20+',
+        img: '/images/samsung-galaxy-s20+.jpg',
         price: 400.30,
         id: 2,
         inCart: 1,

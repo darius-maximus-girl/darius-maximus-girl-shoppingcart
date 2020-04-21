@@ -15,10 +15,22 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: all 0.3s;
+
+        &:hover {
+            .logo {
+                transform: rotate(20deg);
+            }
+
+            .txt {
+                letter-spacing: 2px;
+            }
+        }
 
         .logo {
             width: 40px;
             height: 40px;
+            transition: all 0.3s;
         }
 
         .txt {
@@ -27,11 +39,16 @@
             font-size: 22px;
             letter-spacing: 5px;
             color: $sea;
+            transition: all 0.3s;
         }
     }
 
     &__links {
-        display: flex;
+        display: none;
+
+        @media #{$mid} {
+            display: flex;
+        }
 
         a {
             color: $grey;

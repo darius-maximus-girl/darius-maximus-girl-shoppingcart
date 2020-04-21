@@ -6,6 +6,7 @@
     font-family: $secondary-font;
     font-weight: 300;
     border-radius: 10px;
+    transition: all .3s;
 
     &:hover {
         box-shadow: 0px 36px 60px 5px $shadow;

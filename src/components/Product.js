@@ -40,7 +40,9 @@ function Product({ phone }) {
     return (
         <div className="product" onClick={() => setProductDetails()}>
             <Link to="/product-details">
-                <img className="product-img" src={phone.img} alt="mobile phone"></img>
+                <div className="product-img">
+                    <img src={phone.img} alt="mobile phone"></img>
+                </div>
                 <h3 className="product-model">{phone.model}</h3>
                 <p className="product-price">{phone.price}$</p>
                 <p className="product-left">Only <span>{phone.inStock}</span> items left.</p>
