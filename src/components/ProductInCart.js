@@ -1,6 +1,7 @@
 
 import React, { useState, useContext, useEffect } from 'react';
 import { StoreContext } from './contexts/StoreContext';
+import TrashCan from '../assets/images/trash.png';
 
 function ProductInCart(props) {
 
@@ -37,15 +38,21 @@ function ProductInCart(props) {
 
     return (
         <li className="item">
-            <p className="item-model">{item.model}</p>
-            <img className="item-img" src={item.img} alt="cart-img"></img>
-            <div className="item-btns">
-                <button onClick={() => addItem(item.id)}>+</button>
-                <button onClick={() => removeItem(item.id)}>-</button>
+            <div className="item__image">
+                <img className="item__image-img" src={item.img} alt="cart-img"></img>
             </div>
-            <button onClick={() => removeAllItems(item.id)}>Remove item</button>
-            <p className="item-number">{item.inCart}</p>
-            <p className="item-price">{price.toFixed(2)}$</p>
+            <div className="item__summary">
+                <p className="item__summary-model">{item.model}</p>
+                <div className="item__summary-number">
+                    <div className="btns-container">
+                        <button className="items-number" onClick={() => addItem(item.id)}>+</button>
+                        <button className="items-number" onClick={() => removeItem(item.id)}>-</button>
+                    </div>
+                    <p className="items-number">{item.inCart}</p>
+                    <img src={TrashCan} className="delete-btn" alt="trash can" onClick={() => removeAllItems(item.id)}></img>
+                </div>
+                <p className="item-price">{price.toFixed(2)}$</p>
+            </div>
         </li>
     );
 }

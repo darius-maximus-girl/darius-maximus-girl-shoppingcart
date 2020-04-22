@@ -33,21 +33,21 @@ function ProductDetails(props) {
     }
 
     return (
-        <div className="details-container">
-            <Link to="/"><p className="regular-btn go-back">Go back</p></Link>
-            <div className="details">
-                <img className="details-img" src={phone.img} alt="mobile phone"></img>
-                <div className="details__desc">
-                    <img className="waves" src={Wave} alt="wave"></img>
-                    <p className="details__desc-model">{phone.model}</p>
-                    <p className="details__desc-description">{phone.description}</p>
-                    <p className="details__desc-price">{phone.price}$</p>
-                    <button className={!isInCart ? "regular-btn" : "regular-btn btn-reverse"} onClick={() => handleOnClick()}>{isInCart ? 'In a cart' : 'Add to a cart'}</button>
-                </div>
+            <div className="details-container">
+                <Link to="/"><p className="regular-btn go-back">Go back</p></Link>
+                <div className="details">
+                    <img className="details-img" src={phone.img} alt="mobile phone"></img>
+                    <div className="details__desc">
+                        <img className="waves" src={Wave} alt="wave"></img>
+                        <p className="details__desc-model">{phone.model}</p>
+                        <p className="details__desc-description">{phone.description}</p>
+                        <p className="details__desc-price">{phone.price}$</p>
+                        <button className={!isInCart ? "regular-btn" : "regular-btn btn-reverse"} onClick={() => handleOnClick()}>{isInCart ? 'In a cart' : 'Add to a cart'}</button>
+                    </div>
 
+                </div>
+                {showPopup ? <Popup closePopup={closePopup} /> : ''}
             </div>
-            {showPopup ? <Popup closePopup={closePopup} /> : ''}
-        </div>
     );
 }
 

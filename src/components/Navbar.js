@@ -17,7 +17,7 @@ function Navbar(props) {
                     <h3 className="link">products</h3>
                     {/* <img src={Wave}></img> */}
                 </Link>
-                <Link to="/">
+                <Link to="/about">
                     <h3 className="link">about us</h3>
                 </Link>
                 <Link to="/shopping-cart">

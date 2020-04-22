@@ -17,10 +17,6 @@ function ProductsList(props) {
                     return <Product key={phone.id} phone={phone} />
                 })}
             </div>
-            {/*COUNTS THE PRICE OF ALL PRODUCTS IN A CART*/}
-            <div className='summary'>
-
-            </div>
         </div>
     );
 }

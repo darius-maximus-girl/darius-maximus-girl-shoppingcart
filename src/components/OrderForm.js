@@ -45,7 +45,6 @@ function OrderForm(props) {
                 <input onChange={e => handleChange(e)} type="email" className="form__input" name="email" value={userData.email} placeholder="email address" required />
                 <input onChange={e => handleChange(e)} type="text" className="form__input" name="address" value={userData.address} placeholder="address" required />
                 <input onChange={e => handleChange(e)} type="text" className="form__input" name="postCode" value={userData.postCode} placeholder="post code" required />
-                {/*HOW TO CHECK FOR THE DETAILS*/}
                 <button className="regular-btn">PAY</button>
             </form>
         </div>

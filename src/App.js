@@ -7,6 +7,7 @@ import ProductsList from './components/ProductsList';
 import ProductDetails from './components/ProductDetails';
 import ShoppingCart from './components/ShoppingCart';
 import OrderForm from './components/OrderForm';
+import About from './components/About';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/product-details" component={ProductDetails} />
         <Route path="/shopping-cart" component={ShoppingCart} />
         <Route path="/order-form" component={OrderForm} />
+        <Route path="/about" component={About} />
         <Route component={PageNotFound} />
       </Switch>
       <div className="wave">
