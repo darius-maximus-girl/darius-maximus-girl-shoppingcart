@@ -11,7 +11,7 @@ function Popup(props) {
             <p>Product was added to a cart.
             <img src={Starfish} className="close-btn" onClick={() => closePopup()} alt="close button"></img>
             </p>
-            <Link to="/"><p className="regular-btn">Continue shopping</p></Link>
+            <Link to="/"><p className="regular-btn">Go to products</p></Link>
             <Link to="/shopping-cart"><p className="regular-btn">Go to a cart</p></Link>
         </div>
     );

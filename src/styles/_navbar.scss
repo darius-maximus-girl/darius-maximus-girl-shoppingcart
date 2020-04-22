@@ -1,15 +1,18 @@
 .navbar {
-    padding: 10px 20px;
+    padding: 20px 55px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 60px;
     z-index: 2;
     background: $sky-transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media #{$large} {
+        padding: 20px 80px;
+    }
 
     &__logo {
         display: flex;
@@ -28,15 +31,15 @@
         }
 
         .logo {
-            width: 40px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             transition: all 0.3s;
         }
 
         .txt {
             margin-left: 3px;
             font-weight: 900;
-            font-size: 22px;
+            font-size: 40px;
             letter-spacing: 5px;
             color: $sea;
             transition: all 0.3s;
@@ -45,6 +48,7 @@
 
     &__links {
         display: none;
+        font-size: 24px;
 
         @media #{$mid} {
             display: flex;
@@ -55,10 +59,12 @@
             background: linear-gradient(to bottom, $line 0%, $line 100%);
             background-position: 0 100%;
             background-repeat: repeat-x;
-            background-size: 4px 4px;
+            background-size: 15px 15px;
             color: $grey;
             text-decoration: none;
             transition: all 0.2s;
+            width: 200px;
+            position: relative;
 
             &:active {
                 color: $sea;
@@ -67,6 +73,13 @@
             &:hover {
                 background-size: 4px 50px;
                 color: $white;
+            }
+
+            img {
+                position: absolute;
+                top: 35px;
+                left: 33%;
+                width: 61px;
             }
         }
 

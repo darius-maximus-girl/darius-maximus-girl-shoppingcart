@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { StoreContext } from './contexts/StoreContext';
 import { Link } from 'react-router-dom';
 import Popup from './Popup';
+import Wave from '../assets/images/wave-vector.png';
 
 function ProductDetails(props) {
 
@@ -37,6 +38,7 @@ function ProductDetails(props) {
             <div className="details">
                 <img className="details-img" src={phone.img} alt="mobile phone"></img>
                 <div className="details__desc">
+                    <img className="waves" src={Wave} alt="wave"></img>
                     <p className="details__desc-model">{phone.model}</p>
                     <p className="details__desc-description">{phone.description}</p>
                     <p className="details__desc-price">{phone.price}$</p>

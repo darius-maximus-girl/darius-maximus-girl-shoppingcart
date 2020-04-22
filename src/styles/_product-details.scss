@@ -1,6 +1,6 @@
 .details-container {
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 150px;
     max-width: 1200px;
 
     a {
@@ -31,9 +31,12 @@
             width: 80%;
             margin: 0 auto;
             margin-bottom: 10px;
+            // border: 10px solid #32b8b4;
+            // border-radius: 25px;
 
             @media #{$small} {
                 width: 40%;
+                // transform: rotate(-4deg);
             }
         }
 
@@ -46,21 +49,24 @@
             }
 
             &-model {
-                font-size: 18px;
+                font-size: 24px;
                 text-transform: capitalize;
-                font-weight: bold;
+                font-weight: 900;
                 margin-bottom: 10px;
             }
 
             &-description {
                 text-align: justify;
                 margin-bottom: 20px;
+                line-height: 24px;
+                font-size: 16px;
             }
 
             &-price {
                 color: #ff247a;
-                font-weight: 700;
+                font-weight: 900;
                 margin-bottom: 15px;
+                font-size: 24px;
             }
 
             button {

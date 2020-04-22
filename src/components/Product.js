@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { StoreContext } from '../components/contexts/StoreContext';
 import { Link } from 'react-router-dom';
+import Wave from '../assets/images/single-wave.png';
 
 function Product({ phone }) {
 
@@ -43,7 +44,8 @@ function Product({ phone }) {
                 <div className="product-img">
                     <img src={phone.img} alt="mobile phone"></img>
                 </div>
-                <h3 className="product-model">{phone.model}</h3>
+                <h3 className="product-model">{phone.model} </h3>
+                <img src={Wave} alt="waves" className="waves" />
                 <p className="product-price">{phone.price}$</p>
                 {!soldOut ? (
                     <p className="product-left">Only <span>{phone.inStock}</span> items left.</p>
@@ -55,7 +57,7 @@ function Product({ phone }) {
             {!soldOut ? <button className={!isInCart && !soldOut ? "regular-btn" : "regular-btn btn-reverse"} onClick={() => handleOnclick()}>{isInCart ? "In a cart" : "Add to a cart"}</button> : ''
             }
 
-            {soldOut ? <div className="product-soldout">SOLD OUT</div> : ''}
+            {soldOut ? <div className="product-soldout">sold out</div> : ''}
         </ div >
     );
 }

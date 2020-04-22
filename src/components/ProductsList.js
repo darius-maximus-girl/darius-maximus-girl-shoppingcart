@@ -9,6 +9,9 @@ function ProductsList(props) {
 
     return (
         <div>
+            <h1 className="heading">Our products
+            <div className="line"></div>
+            </h1>
             <div className="products-container">
                 {phones.map(phone => {
                     return <Product key={phone.id} phone={phone} />

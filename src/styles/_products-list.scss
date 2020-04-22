@@ -4,8 +4,12 @@
     flex-wrap: wrap;
     margin: 0 auto;
     width: 80%;
-    margin-top: 100px;
+    margin-top: 30px;
     max-width: 1200px;
+
+    @media #{$mid} {
+        width: 60%;
+    }
 
     .product {
         background: $white;
@@ -16,7 +20,7 @@
         font-size: 12px;
         align-items: center;
         margin: 20px;
-        width: 200px;
+        width: 250px;
         padding: 10px;
         position: relative;
         border-radius: 10px;
@@ -42,7 +46,7 @@
         }
 
         &-model {
-            font-size: 14px;
+            font-size: 18px;
             text-transform: capitalize;
             margin: 5px 0;
         }
@@ -51,6 +55,7 @@
             color: $strong;
             font-weight: 700;
             margin-bottom: 5px;
+            font-size: 16px;
         }
 
         &-soldout {
@@ -58,10 +63,10 @@
             font-size: 18px;
             padding: 10px;
             color: $strong;
-            font-weight: bold;
+            font-weight: 900;
             border: 3px solid $strong;
             border-radius: 5px;
-            background: #ffd9ff8f;
+            background: #ffffffce;
             transform: rotate(20deg);
         }
 
