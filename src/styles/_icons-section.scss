@@ -1,4 +1,16 @@
 .icons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 30px;
 
+    @media #{$small} {
+        flex-direction: row;
+    }
 
+    .icon {
+        width: 30px;
+        margin-bottom: 15px;
+    }
 }

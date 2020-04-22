@@ -9,9 +9,10 @@ function PaymentSuccess(props) {
 
     return (
         <div className="payment-details">
-            SUCCESS!!!!!!!!!!!!!!!!!!!! Go back to <Link to="/" >the shop!</Link>!
-            If you want to download the summary of your order just click the button
-            <button onClick={() => handleOnclick()}>Download</button>
+            <p className="payment-details__msg">SUCCESS!</p>
+            <p className="payment-details__txt">Go back to <Link to="/" >the shop!</Link> 
+            If you want to download the summary of your order just click the button below:</p>
+            <button className=" regular-btn payment-details__btn" onClick={() => handleOnclick()}>Download</button>
         </div>
     );
 }

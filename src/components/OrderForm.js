@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PaymentSuccess from './PaymentSuccess';
 import { StoreContext } from '../components/contexts/StoreContext';
-
+import Wave from '../assets/images/single-wave.png';
 
 const initialData = {
     name: '',
@@ -38,6 +38,7 @@ function OrderForm(props) {
 
     return !success ? (
         <div className="form-container">
+            <img src={Wave} className="single-wave" alt="single wave"></img>
             <form onSubmit={onSubmit} className="form">
                 <input onChange={e => handleChange(e)} type="text" className="form__input" name="name" value={userData.name} placeholder="name" required />
                 <input onChange={e => handleChange(e)} type="text" className="form__input" name="surname" value={userData.surname} placeholder="surname" required />

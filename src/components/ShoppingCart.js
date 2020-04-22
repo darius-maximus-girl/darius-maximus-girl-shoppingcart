@@ -31,8 +31,8 @@ function ShoppingCart(props) {
             </div>
         </div>
     ) : (
-            <div className="cart-container">
-                Your cart is empty. Go to <Link to="/">products</Link>.
+            <div className="cart-container--empty">
+                Your cart is empty. Go to <Link to="/"> products</Link>.
             </div>
         )
 }
