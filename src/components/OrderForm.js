@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import PaymentSuccess from './PaymentSuccess';
-import { StoreContext } from '../components/contexts/StoreContext';
+import { StoreContext } from './contexts/StoreContext';
 import Wave from '../assets/images/single-wave.png';
 
 const initialData = {
@@ -13,12 +13,13 @@ const initialData = {
 }
 
 function OrderForm(props) {
-    const { dispatch } = useContext(StoreContext);
+    const { dispatch, store } = useContext(StoreContext);
     const [userData, setUserData] = useState(initialData);
     const [success, setSuccess] = useState(false);
 
     useEffect(() => {
-        console.log(userData)
+        console.log(userData);
+        console.log(store.productsInCart);
     }, [userData])
 
     const handleChange = (e) => {
@@ -31,9 +32,10 @@ function OrderForm(props) {
     }
 
     const onSubmit = () => {
+        //IT DISPATCHES THE PERSONAL DATA TO THE SUMMARY OBJECT, THE CART, THE TOTAL SUM + THE DATE AND HOUR OF THE PURCHASE  
         console.log('COOL');
         setSuccess(true);
-        dispatch({ type: 'CLEAR_THE_CART' })
+        // dispatch({ type: 'CLEAR_THE_CART' })
     }
 
     return !success ? (

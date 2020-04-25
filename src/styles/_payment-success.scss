@@ -33,6 +33,25 @@
         }
     }
 
-    &__btn {
+    .btn-wrapper {
+        margin-top: 15px;
+        
+        a {
+            background: $border;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            font-family: $secondary-font;
+            font-size: 18px;
+            font-weight: 300;
+            border-radius: 10px;
+            color: $grey;
+            transition: all 0.3s;
+
+            &:hover {
+                box-shadow: 0px 36px 60px 5px $shadow;
+                transform: scale(1.1);
+            }
+        }
     }
 }

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
-import { StoreContext } from '../components/contexts/StoreContext';
+import { StoreContext } from './contexts/StoreContext';
 import { Link } from 'react-router-dom';
 import Wave from '../assets/images/single-wave.png';
 
