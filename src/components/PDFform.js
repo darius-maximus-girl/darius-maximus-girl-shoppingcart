@@ -1,6 +1,5 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { Page, Text, View, Image, Document, PDFDownloadLink } from '@react-pdf/renderer';
-import { StoreContext } from './contexts/StoreContext';
 
 const styles = {
     body: {
@@ -26,8 +25,10 @@ const styles = {
         border: '2 solid green'
     },
     image: {
-        marginVertical: 15,
-        marginHorizontal: 100,
+        // marginVertical: 15,
+        // marginHorizontal: 100,
+        width: 100,
+        height: 100,
     },
     header: {
         fontSize: 12,
@@ -37,44 +38,27 @@ const styles = {
     },
 }
 
+export function PDFform(props) {
 
-function PDFform(props) {
+    const { cart } = props;
 
-    const { dispatch, store } = useContext(StoreContext);
-
-    console.log('HELLO STORE', store)
-
-
+    console.log('CAAAART', cart)
     return (
         <Document>
             <Page style={styles.body}>
-                <Text style={styles.header} fixed>
-                    ~ Dolphone Purchase Summary ~
-                 </Text>
-                {/*HERE I SHOULD GRAB THE USER DATA*/}
-                <Image
-                    style={styles.image}
-                    src="/static/images/quijote1.jpg"
-                />
-                <Text style={styles.text}>
-                    Capítulo I: Que trata de la condición y ejercicio del famoso hidalgo D.
-                    Quijote de la Mancha
-                </Text>
-                <Text >
-                    {store.totalPrice}
-                </Text>
+                {cart.map(item => {
+                    return (
+                        <Text>
+                            {item.model}, {item.price}
+                            <Image
+                                style={styles.image}
+                                src={item.img}
+                            />
+                        </Text>
+                    )
+                })}
             </Page>
         </Document>
-
     );
 }
 
-// const Download = () => (
-//     <div>
-//         <PDFDownloadLink document={<PDFform />} fileName="summary.pdf">
-//             {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download')}
-//         </PDFDownloadLink>
-//     </div>
-// )
-
-// export default Download

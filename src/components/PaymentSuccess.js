@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import Download from './PDFform';
+import Download from './Download';
+import { StoreContext } from './contexts/StoreContext';
 
 function PaymentSuccess(props) {
 
-    const handleOnclick = () => {
-        console.log('SUCCESS BROTHER!');
+    const { store, dispatch } = useContext(StoreContext);
+
+    const handleOnClick = () => {
+        dispatch({ type: 'CLEAR_THE_CART' })
     }
 
     return (
         <div className="payment-details">
             <p className="payment-details__msg">SUCCESS!</p>
-            <p className="payment-details__txt">Go back to <Link to="/" >the shop!</Link>
+            <p className="payment-details__txt">Go back to <Link to="/" onClick={() => handleOnClick()} >the shop!</Link>
             If you want to download the summary of your order just click the button below:</p>
-            {/* <button className=" regular-btn payment-details__btn" onClick={() => handleOnclick()}>Download</button> */}
             <div className="btn-wrapper">
                 <Download />
             </div>
