@@ -1,3 +1,5 @@
+Live demo: https://dolphone.firebaseapp.com/ (it's not 100% finished but that gives the idea of how it looks like) 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
